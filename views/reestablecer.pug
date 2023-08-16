@@ -1,0 +1,28 @@
+doctype html
+html(lang="en")
+    head
+        include partials/header
+    body.login 
+
+        .contenedor-formulario 
+            h1= nombrePagina 
+
+            p Agrega tu email para reestablecer tu constraseña
+
+            if locals.messages
+                    .alertas 
+                        each categoria in Object.keys(locals.messages)
+                            each error in messages[categoria]
+                                .alerta(class=`${categoria}`)
+                                    p= error 
+
+
+            form.caja-login(method="POST" action="/reestablecer")
+                .campo 
+                    label(for="email") Email 
+                    input(type="text" id="email" name="email" placeholder="tu email")
+                .campo.enviar 
+                    input.boton(type="submit" value="Reestablecer contraseña")
+                .campo.acciones 
+                    a(href="/iniciar-sesion") Ya lo recordé, volver al login 
+    
