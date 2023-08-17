@@ -10,7 +10,7 @@ const db = new Sequelize(process.env.BD_NOMBRE,
   process.env.BD_PASSWORD, {
 
   host: process.env.BD_HOST,
-  dialect: 'mysql'/* one of 'mysql' | 'postgres' | 'sqlite' | 'mariadb' | 'mssql' | 'db2' | 'snowflake' | 'oracle' */,
+  dialect: 'postgres'/* one of 'mysql' | 'postgres' | 'sqlite' | 'mariadb' | 'mssql' | 'db2' | 'snowflake' | 'oracle' */,
   port: process.env.BD_PORT,
   //operatorsAliases: false,
   define: {
